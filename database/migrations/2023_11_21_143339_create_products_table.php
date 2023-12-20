@@ -22,7 +22,7 @@ return new class extends Migration
             $table->unsignedBigInteger('gender_id')->index()->nullable();
             $table->foreign('gender_id')->references('id')->on('genders')->nullOnDelete();
             $table->unsignedBigInteger('color_id')->index()->nullable();
-            $table->foreign('color_id')->references('id')->on('colors')->nullOnDelete();
+            $table->foreign('color_id')->references('id')->on('attribute_values')->nullOnDelete();
             $table->unsignedBigInteger('discount_menu_id')->index()->nullable();
             $table->foreign('discount_menu_id')->references('id')->on('menus')->nullOnDelete();
             $table->unsignedBigInteger('popular_menu_id')->index()->nullable();

@@ -34,7 +34,13 @@ class ProductFactory extends Factory
             'gender_id' => $gender->id,
             'color_id' => $color->id,
             'product_code' => str()->random(20) . '-' . rand(1, 3),
-            'group_code' => $category->
+            'group_code' => $category->id . '-' . $brand->id . '-' . $gender->id . '-' . rand(1, 3),
+            'name' => fake()->unique()->streetName(),
+            'description' => fake()->paragraph(rand(3, 5)),
+            'average_rating' => fake()->randomFloat(1,1, 5),
+            'ratings_count' => rand(1, 99),
+            'favorites_count' => rand(99, 199),
+            'random' => rand(1, 999),
         ];
     }
 }
